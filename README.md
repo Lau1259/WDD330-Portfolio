@@ -1,1 +1,2 @@
-# Wdd330-frontend2
+# WDD330 - Portfolio
+By Lautaro Cuevas
