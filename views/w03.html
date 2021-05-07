@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 03</title>
+  <title>Week 03 Notes</title>
   <link rel="stylesheet" href="../css/main.css">
 </head>
 
@@ -17,7 +17,8 @@
     <section>
       <h1>This</h1>
       <p>In JavaScript the <span class="highlight">this</span> keyword refers to the current object. This is important
-        to take into account because it adds a level of flexibility to functions. Using this makes it easier to reuse a
+        to take into account because it adds a level of flexibility to functions. Using "this" makes it easier to reuse
+        a
         function across various objects.</p>
       <p>Example:
         <code class="codeblock">
@@ -27,6 +28,9 @@
           }
         </code>
       </p>
+      <p>An important thing to remember is that arrow functions have no 'this' abd refer to the parent object and not
+        the function itself.
+        This can be useful if you want to make a function work take values from the outer context.</p>
     </section>
     <section>
       <h1>Objects</h1>
@@ -68,7 +72,7 @@
     <section>
       <h1>Events</h1>
       <p>JavaScript events are a way to keep track of changes that may happen in the browser. This includes clicks,
-        moseovers, screen taps, loading, etc. These events must be tracked by adding an event listener. These event
+        mouse overs, screen taps, loading, etc. These events must be tracked by adding an event listener. These event
         listeners track changes and can call a callback function once an event is detected. <span class="highlight">*
           NOTE: Inline click events should be avoided.</span></p>
       <p>Basic event syntax:
