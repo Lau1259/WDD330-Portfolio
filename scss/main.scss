@@ -1,0 +1,109 @@
+// Variables
+$accent1-100: hsl(0, 60%, 44%);
+$accent1-200: hsl(0, 60%, 34%);
+$accent1-300: hsl(0, 60%, 24%);
+
+$dark-100: hsl(0, 0%, 22%);
+$dark-200: hsl(0, 0%, 12%);
+$dark-300: hsl(0, 0%, 6%);
+
+$light-100: hsl(0, 0%, 95%);
+$light-200: hsl(0, 0%, 75%);
+$light-300: hsl(0, 0%, 55%);
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 1em 1.5em;
+  background-color: rgba($color: $accent1-100, $alpha: 1);
+}
+
+nav {
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+  a {
+    display: block;
+    padding: 0.5em;
+    color: rgba($color: #ffffff, $alpha: 0.8);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  padding: 1em 1.5em;
+  background-color: $dark-200;
+  min-height: 100vh;
+  color: $light-100;
+  font-size: 18pt;
+}
+
+#toc {
+  margin: 1em 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.nav-link {
+  display: block;
+  border-radius: 1.5em;
+  color: $light-100;
+  font-size: 1.5em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: $dark-300;
+  transition: 0.35s;
+  border-radius: 1.5em;
+  margin-bottom: 0.5em;
+  &:hover {
+    background-color: $light-100;
+    color: $dark-100;
+  }
+}
+
+.codeblock {
+  display: block;
+  font-size: 0.75em;
+  background-color: rgba($color: $accent1-100, $alpha: 0.35);
+  overflow-x: scroll;
+  max-width: 80%;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.highlight{
+  color: $accent1-100;
+  background-color: rgba($color: #000, $alpha: 0.5);
+  font-size: 1.2em;
+  padding: 0em 0.5em;
+  margin: 0em 0.25em;
+}

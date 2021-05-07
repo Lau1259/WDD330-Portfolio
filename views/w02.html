@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 02</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <header>
+      <h1>Week 2 Notes</h1>
+    </header>
+    <main>
+      <hr>
+      <p>This week was a lot of review for me so I opted to take more notes of things I found interesting or new instead
+        of the basic syntax covered in the assigned reading.</p>
+      <hr>
+      <section>
+        <h1>Javascript Basics:</h2>
+
+          JavaScript was <span class="quote">"designed to be inserted directly into the HTML code"</quote>, but can be
+            separated by using the script tag.
+
+            <!-- h2{ JavaScript allows two types of comments:}
+    - Single line: // Comment
+    - Multi line: /_ Comment _/ -->
+
+            <h2> JavaScript reserved words bank:</h2>
+
+            <blockquote>abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger,
+              default,
+              delete, do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if,
+              implements, import, in instanceof, int, interface, let, long, native, new, null, package, private,
+              protected,
+              public, return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try,
+              typeof,
+              var, volatile, void, while, with, yield
+            </blockquote>
+
+            <h2> JavaScript offers Primitive data types as well. These are:</h2>
+            <ul>
+              <li>String: Text values</li>
+              <li>Symbol (The symbol primitive data type was only introduced in ES6.)</li>
+              <li>Number: Int, Float, etc.</li>
+              <li>Boolean: True/False</li>
+              <li>Undefined</li>
+              <li>Null</li>
+            </ul>
+
+            <h2> JavaScript assign values</h2>
+            <ul>
+              <li> const: constant with block scope. Primitive data cannot be reassigned with this. Non-primative data
+                can change as long as the object itself doesn't change type.</li>
+              <li> let: variable with block scope</li>
+              <li> var: works like let, but no longer used because of the scope difference.</li>
+            </ul>
+            <p>Example of assigning multiple values:</p>
+            <code>
+              let x = 3, y = 4, z = 5;
+            </code>
+
+            <!--
+    h2{ Variable names}
+
+    Constant and variable names are case sensitive, so ANSWER is different to Answer and answer. -->
+
+            <h2> Escape chars:</h2>
+            <p>The backslash is used to escape special characters in strings such as:</p>
+            <ul>
+              <li>Single quote marks \'</li>
+              <li>Double quote marks \"</li>
+              <li>End of line n</li>
+              <li>Carriage return r</li>
+              <li>Tab t</li>
+            </ul>
+            <h2> Template Literals (Personal Favorite)</h2>
+
+            <p>Examples:</p>
+
+            <pre>const name = `Siri`;
+    `Hello ${ name }!`;
+    << 'Hello Siri!'
+    const age = 39;
+    `I will be ${ age + 1 } next year`;
+    << 'I will be 40 next year'</pre>
+
+            <h2> Symbols</h2>
+            <p>Symbols were introduced as a new primitive value in ES6. They can be used to create unique values, which
+              helps to avoid any naming collisions.</p>
+            <p>Symbols are the only primitives that don't have a literal form. The only way to create them is to use the
+              Symbol() function</p>
+            <h2> Undefined and null</h2>
+            <ul>
+              <li>Undefined: is the value given to variables that have not been assigned a value.</li>
+              <li>Null means 'no value'. It can be thought of as a placeholder that JavaScript uses to say "there should
+                be a value here, but there isn’t at the moment."</li>
+              <li><a href="https://www.sitepoint.com/es6-symbols-uses/">More on symbols here</a></li>
+            </ul>
+
+            <h2> Code Destructuring (Great for temporary values)</h2>
+            <p>Destructuring also gives us a neat way of swapping the value of two variables over: <code>[x,y]
+                =[y,x];</code></p>
+
+            <h2> Sets</h2>
+            <p>
+              Sets were introduced to the specification in ES6. A set is a data structure that represents a collection
+              of
+              unique
+              values, so it cannot include any duplicate values. They are similar in concept to amathematical set,
+              although
+              (for
+              the time being at least) they don't contain mathematical set operations such as union, intersection and
+              product.
+            </p>
+            <p>
+              Sets offer a useful way to keep track of data without having to check if any values have been duplicated.
+              It's
+              also quick and easy to check if a particular value is in a set, which can be a slow operation if an array
+              is
+              used.
+            </p>
+            <p>
+              An empty set is created using the new operator and Set() constructor:
+              <code>const list = new Set();</code>
+            </p>
+            <h2> Set Methods</h2>
+            <ul>
+              <li>.add(value) : Places a value in a set
+                Multiple add methods can be chained to add multiple UNIQUE values <code>list.add(2).add(3).add(4);
+                  << Set { 1, 2, 3, 4 }</code> Multiple values can be added to a set in one go by placing them inside an
+                    array that is provided as an argument: <code>const numbers = new Set([1,2,3]);</code>
+              </li>
+              <li>.delete(value) : Removes a value from a set. Returns boolean representing success or failure.</li>
+              <li>.clear() : Removes all values from a set.</li>
+            </ul>
+
+            <p>Sets can also be converted to array using the spread operator</p>
+
+            <pre>
+    const shoppingSet = new Set().add('Apples').add('Bananas').add('Beans');
+    const shoppingArray = [...shoppingSet]
+    shoppingArray
+    << [ 'Apples', 'Bananas', 'Beans' ]
+    </pre>
+
+            <p>You can also use the array.from(set) to convert to an array</p>
+
+            <pre>const shoppingSet = new Set().add('Apples').add('Bananas').add('Beans');
+    const shoppingArray = Array.from(shoppingSet);</pre>
+
+            <h2> Ternary operator syntax</h2>
+
+            <pre>condition ? (//code to run if condition is true) : (//code to run if condition is false)</pre>
+
+            <h2> Functions | Variable Numbers of Arguments</h2>
+            <p>
+              Every function has a special variable called arguments . This is an array-like object that contains every
+              argument
+              passed to the function when it is invoked. The problem is that arguments is not an array. It has a length
+              property
+              and you can read and write each element using index notation, but it doesn’t have array methods such as
+              slice() ,
+              join() , and forEach() . There is a way of 'borrowing' methods from arrays, but it is clumsy and
+              unnecessary.
+            </p>
+
+            <p>A much better option is to use the rest operator. This was introduced in ES6 and can be used to deal with
+              multiple
+              arguments by creating an array of arguments that are available inside the body of the function.</p>
+
+            <p>To use the rest operator, simply place three dots in front of the last parameter in a function
+              declaration.
+              This
+              will then collect all the arguments entered into an array. For example, the following function will have
+              access to
+              an array of all the arguments entered:</p>
+
+            <pre>function rest(...args){
+        return args;
+    }</pre>
+
+            <h2> Example for team function improvement:</h2>
+
+            <pre>const triNum = n => {let a=0;
+    for(x of [...new Array(n+1).keys()]){a+=x};
+    return a};
+    </pre>
+
+            <h2> Shorter version:</h2>
+
+            <pre>const triNum = n => {for(x of [...new Array(n).keys()]){n+=x};return n
+    };
+    </pre>
+
+            <h2> Reduce version:</h2>
+            <p>
+              Help from <a
+                href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/4/k01nwtrd?fromShare=true">JS
+                Novice to
+                Ninja</a> and <a
+                href="https://www.javascripttutorial.net/javascript-array-reduce/">JavaScriptTutorial.net</a>.
+            </p>
+            <pre>
+    const triNum = n => [...new Array(n+1).keys()].reduce((accumulator, currentValue) => accumulator + currentValue);
+
+    // Using an initial value
+    const triNum = n => [...new Array(n).keys()].reduce((accumulator, currentValue) => accumulator + currentValue,n);
+    </pre>
+      </section>
+      <section>
+        <h1 class="note-title">General Notes:</h1>
+
+        This week was a great learning experience because of my team, though the reading was a lot of review. I had a
+        tough
+        time getting in contact with my team at first because no one uses teams. When we we're finally able to meet I
+        was
+        happy that my classmates were not shy about their questions and they were so flexible with their schedule.
+
+        As I go forward this semester, I find myself looking for more complex uses of JavaScript. I don't know how often
+        I'll use it, but I really enjoy being able to read documentation or see examples and understand what the code is
+        doing. I also like being a tutor to others because I learn so much more. I hope that this semester will bring me
+        greater challenges or at least the opportunity to develop my programming skills much further. I want to measure
+        this
+        by how much I can do with JavaScript in comparison to the time I spent.
+
+        Challenges:
+        I really wanted to make functional programming versions of the code we had for the team assignment. It was very
+        hard, but I learned a lot as I went back through the reading assignment and was able to practice using reduce,
+        the
+        spread operator, and learning more about creating a range as a list. I am most proud of the reduce methods used
+        in
+        the functional version because it was the hardest to understand.
+
+        Accomplishments:
+        This week I feel like I accomplished a lot because we set up a lot of things for our team and I was able to
+        grasp
+        the content in the reading to a higher level than before. Among the things I accomplished are the following:
+        <ul>
+          <li>Accessing and communicating with group on Teams platform.</li>
+          <li>Going to the team meeting prepared to teach and learn.</li>
+          <li>Prepare code for activity before meeting.</li>
+          <li>Schedule meeting</li>
+          <li>Ask questions about how my classmates would approach a problem.</li>
+          <li>Practice leadership skills by asking group to assign tasks and taking the first seat as the 'Driver' of
+            the
+            team activity.</li>
+          <li>Create a GitHub repository for out team assignments.</li>
+          <li>Refactored code in the team activity and improved (in my opinion) code to make it shorter. *This is only
+            in
+            my notes since I don't know if my group wants to get that complex with JS.</li>
+        </ul>
+      </section>
+    </main>
+</body>
+
+</html>

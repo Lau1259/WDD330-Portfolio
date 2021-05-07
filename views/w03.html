@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 03</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <header>
+    <h1>Week 3 Notes</h1>
+  </header>
+  <main>
+    <section>
+      <h1>This</h1>
+      <p>In JavaScript the <span class="highlight">this</span> keyword refers to the current object. This is important
+        to take into account because it adds a level of flexibility to functions. Using this makes it easier to reuse a
+        function across various objects.</p>
+      <p>Example:
+        <code class="codeblock">
+          function getName(object){<br>
+          let name = this.name;<br>
+          return name;<br>
+          }
+        </code>
+      </p>
+    </section>
+    <section>
+      <h1>Objects</h1>
+      <p>JavaScript objects are basically the equivalent of a python dictionary. It allows you to save key value
+        pairs.You can also assign specific functions to an object. When an object is assigned a function we refer to it
+        as a method.</p>
+      <p>A JavaScript object looks like this:
+        <code class="codeblock">
+          let object = {name: "someString"};
+        </code></p>
+      Alternatively, you can create a blank object using the following syntax:
+      <code class="codeblock">
+        // Using shorthand<br>
+        let obj1 = {};<br>
+        <br>
+        // Using the constructor function<br>
+        let obj2 = new Object();
+      </code>
+    </section>
+    <section>
+      <h1>Document Object Model (DOM)</h1>
+      <p>The DOM allows us to hook to diffent parts of our page. This is very useful when you want to manipulate
+        something. Common ways to select items in the DOM include:
+        <code class="codeblock">
+          // By element id <br>
+          let item1 = document.getElementById('myId');<br>
+          <br>
+          // By class name
+          let items1 = document.getElementByClassName('myClass');<br>
+          <br>
+          // Using query select. This essentially allows you to reference objects using css selectors<br>
+          let item1 = document.querySelect(#myId);<br>
+          <br>
+          //You can also use querySelectAll to get multiple values
+          let images = document.querySelectAll(img);<br>
+        </code>
+      </p>
+    </section>
+    <section>
+      <h1>Events</h1>
+      <p>JavaScript events are a way to keep track of changes that may happen in the browser. This includes clicks,
+        moseovers, screen taps, loading, etc. These events must be tracked by adding an event listener. These event
+        listeners track changes and can call a callback function once an event is detected. <span class="highlight">*
+          NOTE: Inline click events should be avoided.</span></p>
+      <p>Basic event syntax:
+        <code class="codeblock">
+          // Adding an event listener to the document body<br>
+          document.body.addEventListener('click',doSomething)
+        </code>
+      </p>
+    </section>
+    <section>
+      <h1>Personal Notes:</h1>
+      <p>This week was a lot of review for the most part. I really liked the feeling of understanding what is going on,
+        especially with the events because it's something that I had struggled to comprehend before.</p>
+      <p>This week I worked hard to continue practicing functional programming principles. However, I now understand why
+        you need to balance readability and functionality. While 100% of my code worked as I expected, I had a hard time
+        explaining the entire process to my team. They hadn't done the reading yet, but I think it would also help to
+        practice balancing readability and functionality. </p>
+      <p>One of the hardest things that I ran into was understanding the reduce function with an arrow function and how
+        it all tied together. While I did finish the assignment I noticed that it may have been more productive to make
+        a regular function because it would improve the overall readability of my code. I think this is really important
+        for group projects and is something that I want to tackle in the coming weeks.</p>
+      <h2>Questions:</h2>
+      <ul>
+        <li>How do I know when functionality is more important than readability? What decides what I should focus on?
+        </li>
+        <li>How often are array functions used in large scale programming projects?</li>
+        <li>Should I try to learn how to create swipe events or is it normal to use libraries for this sort of thing in
+          the workplace?</li>
+      </ul>
+      <h2>Personal Achievements:</h2>
+      <ul>
+        <li>Completed over 50 challenges in JSHero. My favorite part of this was that I started backwards so I was able
+          to practice a lot of the complex challenges before going back down to the simpler challenges.</li>
+        <li>I helped Erik link his GitHub account to his VS Code set up.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>

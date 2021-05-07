@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 1 Notes</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <header>
+    <h1>Week 1 Notes</h1>
+  </header>
+  <main>
+    <section>
+      <p>This week I started my frontend portfolio. My plan for the index page is to start simple and build on it
+        every
+        week. I like the idea of using a list to create the links as well as maybe using it to change the background
+        color
+        or "theme".</p>
+
+      <p>During my studies this week, I liked the overview of localStorage. I think this could be one way to store the
+        theme
+        or some sort of id for the theme. I was thinking that this would allow me to set color variables in CSS and
+        change
+        them with JavaScript when I need to.</p>
+
+      <p>I also decided that I need to make a list of ideas that I can work through with JavaScript. I feel
+        comfortable
+        enough using it for basic programming, but I have no idea what its useful for outside of parsing through
+        lists.
+        I
+        know that it has potential and want to at least write down some uses.</p>
+    </section>
+    <section class="code-highlights">
+      <h1 class="code-title">Code Highlights - localStorage</h1>
+      <blockquote>localStorage data is specific to the protocol of the document. In particular, for a site loaded over
+        HTTP
+        (e.g., http://example.com), localStorage returns a different object than localStorage for the corresponding
+        site
+        loaded over HTTPS (e.g., https://example.com).</blockquote>
+      <h2 class="title">Available functions:</h2>
+      <ul>
+        <li> setItem
+          This adds data items to the local storage object.</li>
+        <li> getItem
+          This retrieves items from the local storage object.</li>
+        <li> removeItem
+          This removes items from the local storage object.</li>
+        <li> clear This removes all items from the local storage object.</li>
+      </ul>
+      <h2 class="title">Example:</h2>
+      Example of retrieving items from local storage.
+      <pre class="codeblock">
+function loadStory(){
+  var storyName = document.getElementById(“name_input”).value
+  var storyHTML = localStorage.getItem(storyName)
+  document.getElementById(“story_editor”).value = storyHTML;
+}
+      </pre>
+      Example of saving items to local storage.
+      <pre class="codeblock">
+function saveStory(){
+  var storyName = document.getElementById(“name_input”).value
+  var storyHTML = document.getElementById(“story_editor”).value
+  localStorage.setItem(storyName, storyHTML)
+}
+      </pre>
+
+      <h2 class="title">Study Sources:</h2>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Local Storage Mozilla</a>
+        </li>
+        <li>Doing Stuff With Web Things (pg. 42)</li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>
