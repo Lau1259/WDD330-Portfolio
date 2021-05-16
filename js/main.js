@@ -12,6 +12,10 @@ const links = [{
     label: "Week 03 Notes",
     url: "views/w03.html"
   },
+  {
+    label: "Week 04 Notes",
+    url: "views/w04.html"
+  },
 ]
 
 function createToc(){

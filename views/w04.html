@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 04 Notes</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <header>
+    <h1>Week 4 Notes</h1>
+  </header>
+  <div class="notes">
+    <p id="msg"></p>
+    <p>This week I decided to make a program using the principles found in the reading this week. I chose to focus on
+      object creation and using it on a single page website. My idea behind this was to make sure that I understood how
+      using an object could be used in a javascript product. Below I made an example of a dog adoption site that might
+      use a dog object to display the dogs that could be adopted.</p>
+    <p>The dog object is an instantiation of the Dog class.
+      <code class="codeblock">
+        class Dog {<br>
+        constructor(breed, color, age, name, imgUrl) {<br>
+        this.breed = breed;<br>
+        this.color = color;<br>
+        this.age = age;<br>
+        this.name = name;<br>
+        this.imgUrl = imgUrl;<br>
+        }<br>
+        chooseMe() {<br>
+        document.getElementById('breed').innerHTML =<br>
+        `Breed: ${this.breed}`;<br>
+        document.getElementById('color').innerHTML =<br>
+        `Color: ${this.color}`;<br>
+        document.getElementById('age').innerHTML =<br>
+        `Age: ${this.age}`;<br>
+        document.getElementById('name').innerHTML =<br>
+        `Name: ${this.name}`;<br>
+        document.getElementById('dogPhoto').setAttribute('src', this.imgUrl);<br>
+        }<br>
+        }
+      </code>
+    </p>
+  </div>
+  <main>
+    <h2 id="dogObject">Forms, Objects, and OOP: Adopt a Dog</h2>
+    <div class="doggo">
+      <img id="dogPhoto" src="../images/dogs/none.jpg" alt="Dog">
+      <div class="dogInfo">
+        <p id="name">Name</p>
+        <p id="breed">Breed:</p>
+        <p id="color">Color:</p>
+        <p id="age">Age:</p>
+      </div>
+    </div>
+    <div class="dog-choice">
+      <button type="button" onclick="chooseDog(1)">Dog 1</button>
+      <button type="button" onclick="chooseDog(2)">Dog 2</button>
+      <button type="button" onclick="chooseDog(3)">Dog 3</button>
+    </div>
+    <div class="notes">
+      <p>I will next show a form that lets you adopt a dog and will make sure that you are picking a dog that is
+        presented above. Essentially, I will use custom validation to make sure that the dog name matches one of the
+        dogs above.</p>
+    </div>
+    <form action="" method="get" id="adoptionForm">
+      <label for="name">Name:
+        <input type="text" name="name" id="dog-name">
+      </label>
+      <label for="breed">Breed:
+        <input type="text" name="breed" id="breed">
+      </label>
+      <label for="email">Email:
+        <input type="email" name="email" id="email">
+      </label>
+      <input type="submit" value="Adopt Dog" id="adoptBtn">
+    </form>
+  </main>
+  <script>
+    /**********************************************************
+     I created a dog class which allows me to create multiple dog objects.
+    **********************************************************/
+    class Dog {
+      constructor(breed, color, age, name, imgUrl) {
+        this.breed = breed;
+        this.color = color;
+        this.age = age;
+        this.name = name;
+        this.imgUrl = imgUrl;
+      }
+      chooseMe() {
+        document.getElementById('breed').innerHTML =
+          `Breed: ${this.breed}`;
+        document.getElementById('color').innerHTML =
+          `Color: ${this.color}`;
+        document.getElementById('age').innerHTML =
+          `Age: ${this.age}`;
+        document.getElementById('name').innerHTML =
+          `Name: ${this.name}`;
+        document.getElementById('dogPhoto').setAttribute('src', this.imgUrl);
+      }
+    }
+
+    /**********************************************************
+     This is where I create the new dog objects
+    **********************************************************/
+    let dog1 = new Dog(
+      'German Shepard',
+      'Black and blonde',
+      1,
+      'Paws',
+      "../images/dogs/germanShepard.jpg"
+    );
+    let dog2 = new Dog(
+      'Labrador',
+      'Black',
+      3,
+      'Bob',
+      "../images/dogs/labrador.jpg"
+    );
+    let dog3 = new Dog(
+      'Chihuahua',
+      'light brown',
+      3,
+      'Koda',
+      "../images/dogs/chihuahua.jpg"
+    );
+    /**********************************************************
+     This function serves to effectively update the data using the chooseMe method of the dog class
+    **********************************************************/
+    function chooseDog(n) {
+      switch (n) {
+        case 1:
+          dog1.chooseMe();
+          break;
+        case 2:
+          dog2.chooseMe();
+          break;
+        case 3:
+          dog3.chooseMe();
+          break;
+      }
+    }
+    /**********************************************************
+     This is where I validate the form before submision
+    **********************************************************/
+    let adoptionForm = document.getElementById('adoptionForm');
+    adoptionForm.addEventListener('submit', validate, false);
+
+    function validate(event) {
+      const name = adoptionForm.name.value;
+      const breed = adoptionForm.breed.value;
+      const checkD1 =
+        (name.toLowerCase() === dog1.name.toLowerCase()) &&
+        (breed.toLowerCase() === dog1.breed
+          .toLowerCase());
+      const checkD2 =
+        (name.toLowerCase() === dog2.name.toLowerCase()) && (breed.toLowerCase() === dog2.breed.toLowerCase());
+      const checkD3 =
+        (name.toLowerCase() === dog3.name.toLowerCase()) && (breed.toLowerCase() === dog3.breed.toLowerCase());
+      if ((checkD1 || checkD2 || checkD3) === false) {
+        event.preventDefault();
+        alert('Please choose a dog from above. Make sure to type in the name and breed correctly.');
+      }
+    }
+    /**********************************************************
+     This piece of code will check for a success message and then add it to a string if the adoption worked
+    **********************************************************/
+    const query = window.location.search;
+    if (query !== "") {
+      const params = new URLSearchParams(query);
+      let msg = `${params.get('name')} the ${params.get('breed')} was successfully adopted by ${params.get('email')}`;
+      document.getElementById('msg').innerHTML = msg;
+      document.getElementById('msg').classList.add('success');
+    }
+  </script>
+
+</body>
+
+</html>
