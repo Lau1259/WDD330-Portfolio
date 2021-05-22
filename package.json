@@ -1,0 +1,22 @@
+{
+  "name": "lncr-portfolio",
+  "version": "1.0.0",
+  "description": "This contains portfolio work of frontend development exercises including testing with Nodejs, Object oriented principles in JavaScript, and notes from a study conducted about frontend development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --json > results.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lau1259/WDD330-Portfolio.git"
+  },
+  "author": "Lautaro Cuevas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lau1259/WDD330-Portfolio/issues"
+  },
+  "homepage": "https://github.com/Lau1259/WDD330-Portfolio#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

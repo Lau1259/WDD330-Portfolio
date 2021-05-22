@@ -16,13 +16,17 @@ const links = [{
     label: "Week 04 Notes",
     url: "views/w04.html"
   },
+  {
+    label: "Week 05 Notes",
+    url: "views/w05.html"
+  },
 ]
 
-function createToc(){
-  list = document.getElementById('toc');
+function createToc() {
+  let list = document.getElementById('toc');
   links.forEach(linkData => {
-    listItem = document.createElement("li");
-    linkItem = document.createElement("a");
+    let listItem = document.createElement("li");
+    let linkItem = document.createElement("a");
     linkItem.classList = 'nav-link';
     linkItem.href = linkData['url'];
     linkItem.text = linkData['label'];
@@ -31,4 +35,30 @@ function createToc(){
     listItem.appendChild(linkItem);
     list.appendChild(listItem);
   });
+}
+
+let navLinks = [{
+  title: "Home",
+  url: "../index.html"
+}];
+
+function createNav() {
+  let nav = document.getElementById('main-nav');
+  navLinks.forEach(linkData => {
+    let list = document.createElement("ul");
+    let listItem = document.createElement("li");
+    let linkItem = document.createElement("a");
+    linkItem.classList = 'top-nav-link';
+    linkItem.href = linkData['url'];
+    linkItem.text = linkData['title'];
+    linkItem.title = linkData['title'];
+
+    listItem.appendChild(linkItem);
+    list.appendChild(listItem);
+    nav.appendChild(list);
+  });
+}
+
+const start = () =>{
+  createNav()
 }

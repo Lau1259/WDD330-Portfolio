@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 5 Notes</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body onload="start()">
+  <header>
+    <nav id="main-nav"></nav>
+    <h1>JavaScript Testing</h1>
+  </header>
+  <main>
+    <p>Testing in JavaScript allows you to make sure that your code is working in cases where it should and test
+      outcomes
+      of cases that your programs might run into. This allows you to fine tune your program so that it knows what to do
+      in
+      different scenarios before it makes it to the production stage.</p>
+    <section>
+      <h2>TDD in development</h2>
+      <div class="faq">
+        <p>What does TDD stand for?</p>
+        <p>Test-driven development(TDD) is the process of writing tests before any actual code.</p>
+        <p>What steps do I need to do to implement TDD?</p>
+        <p>
+          This is an example of a TDD cycle.
+          <ol>
+            <li>Write tests (that initially fail)</li>
+            <li>Write code to pass the tests</li>
+            <li>Refactor the code</li>
+            <li>Test refactored code</li>
+            <li>Write more tests for new features</li>
+          </ol>
+        </p>
+      </div>
+    </section>
+    <section>
+      <h2>Testing using Jest</h2>
+      <p>Jest is a testing suite that can be installed and run using Nodejs and npm. This tool is very easy to
+        understand
+        and the general syntax is meant to be human readable. For example:
+        <code class="codeblock" title="Source: JS Novice to Ninja Chapter 10">
+          test('10 is not prime', () => {
+          expect(isPrime(10)).not.toBe(true);
+          });
+
+          //From https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/10/k01nwuwc
+        </code>
+      </p>
+
+      <h2>Installing Jest</h2>
+      <p>The installation of Jest is very simple assuming you already have NPM and Nodejs. If you don't, it is still
+        simple, but requires more steps. The command to install jest is like any other installation using NPM <code
+          class="codeblock">npm install --save jest</code></p>
+      <h2>Using Jest</h2>
+      <p>Jest works by looking for js files with the word test in them and then runs the test functions in the file. The
+        most basic tests take a function in the expect method and the result that you should get in the toBe method. It
+        then compares the two values and will only return PASS if the two values match. A
+        simple test file could look like this: <code class="codeblock">
+          'use strict'<br>
+
+          const isMultiple = (num, base) => {<br>
+          return (num > base) && (num % base === 0)<br>
+          }<br>
+          <br>
+          test('12 is multiple of 3', () => {<br>
+          expect(isMultiple(12, 3)).toBe(true);<br>
+          })<br>
+          <br>
+          test('The string \"12\" is multiple of 3', () => {<br>
+          expect(isMultiple("12", 3)).toBe(true);<br>
+          })<br>
+          <br>
+          test('The string \"apple\" is not a multiple of 3', <br>() => {<br>
+          expect(isMultiple("apple", 3)).toBe(false);<br>
+          })
+        </code>
+      </p>
+      <ol>
+        <li>Create a file with .test. in the name.</li>
+        <li>Create the functions you would like to test.</li>
+        <li>Add test cases using the special Jest syntax.</li>
+        <li>Run the tests using Nodejs. One way is to add jest to test in the package.json </li>
+        <li>Review the output that would like like this for the above code: <code class="codeblock">
+            // I use verbose here because I want to ensure that I get a detailed description of the tests that are run.
+            This might not be the most efficient for projects with many tests. You can also route the results to json
+            using the --json flag and > filename.extension.
+            <br>
+            <br>jest --verbose<br>
+            <br>
+            PASS testing/multiiple.test.js<br>
+            √ 12 is multiple of 3 (4 ms)<br>
+            √ The string "12" is multiple of 3<br>
+            √ The string "apple" is not a multiple of 3 (1 ms)
+          </code>
+        </li>
+        <li>Save to a file to review (optional)</li>
+      </ol>
+    </section>
+    <section>
+      <h2>Test Examples</h2>
+      <p>This repository has a testing folder that has files that may be tested using Jest. Reading them and running
+        them
+        will help clarify what Testing looks like using Jest.</p>
+      <p>Below I will list the files included in the testing folder and a brief description of what tests they run,
+        though
+        it should be easy enough to
+        read through the code since it reads almost like regular english.</p>
+      <ul>
+        <li>multiple.test.js - This file has a function that checks if something is a multiple of three. The tests go
+          through checking a valid int, a string of a valid int, and regular text.</li>
+        <li>max.test.js - This file has a function that will iterate through an array and return the largest number or
+          the
+          "max" letter in an array.</li>
+        <li>animalType.test.js - This file has a class and child objects that represent different animals that we then
+          test to see if they are of a certain type.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>My experience with TDD:</h2>
+      <p>This was the second time I attempt to write a program using TDD. The most helpful exercise was the one with the
+        animal class and child objects. I started with a good idea of what I wanted the function to achieve, but having
+        them all be children of a class made me think more about how my test should work. I also had more properties
+        than
+        I have ever used in a function that I ran tests on. I really liked it because as I wrote the code I ran into
+        more
+        properties that would help ensure that the result I was getting checked enough variables to sort out animals
+        that
+        were clearly not dogs and those that are close like wolves.</p>
+    </section>
+    <section>
+      <h2>Results of the tests described above</h2>
+      <code class="codeblock">
+        ..\Portfolio>npm test <br>
+        <br>
+        > lncr-portfolio@1.0.0 test<br>
+        > jest --verbose --json > results.json <br>
+        <br>
+        PASS testing/animalType.test.js <br>
+        √ A(n) Elephant is not a dog (4 ms) <br>
+        √ A(n) Eagle is not a dog<br>
+        √ A(n) Labrador is a dog (1 ms) <br>
+        √ A(n) Wolf is not a dog<br>
+        <br>
+        PASS testing/getMax.test.js<br>
+        √ 85 is the largest number in the following array: [1,25,38,12,9,6,42,85,84,21] (1 ms) <br>
+        √ 804 is the largest number in the following array: -91,25,138,12,9,685,420,185,804,21 <br>
+        √ -9 is the largest number in the following array: -91,-25,-138,-12,-9,-685,-420,-185,-804,-21 (1 ms) <br>
+        √ e is the max letter in the following array: apple,b,c,d,e,F,A,Z <br>
+        <br>
+        PASS js/squareRoot.test.js<br>
+        √ square root of 4 is 2 (1 ms) <br>
+        <br>
+        PASS testing/multiiple.test.js <br>
+        √ 12 is multiple of 3 (1 ms) <br>
+        √ The string "12" is multiple of 3 (1 ms) <br>
+        √ The string "apple" is not a multiple of 3 <br>
+        <br>
+        Test Suites: 4 passed, 4 total <br>
+        Tests: 12 passed, 12 total <br>
+        Snapshots: 0 total
+        Time: 2.545 s
+        Ran all test suites.
+      </code>
+    </section>
+  </main>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
