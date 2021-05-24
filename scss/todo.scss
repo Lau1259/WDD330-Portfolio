@@ -158,7 +158,8 @@
   grid-template-columns: 7fr 1fr;
   margin: 0;
   transition: opacity 0.35s;
-  &:hover {
+  &:hover,
+  &:focus-within {
     opacity: 1;
   }
   input {

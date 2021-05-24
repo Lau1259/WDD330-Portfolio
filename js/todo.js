@@ -6,22 +6,18 @@ class Task {
   }
 }
 
-let toDoList = []
-let tsk1 = new Task(
+let demoTasks = [];
+demoTasks.push(new Task(
   'This is an example of an active task.',
   false,
   0
-);
-let tsk2 = new Task(
+));
+demoTasks.push(new Task(
   'This is another example of a completed task',
   true,
   1
-);
-toDoList.push(tsk1);
-toDoList.push(tsk2);
+));
 
-
-let myTasks = toDoList;
 let displayTasks;
 let currentFilter;
 
@@ -35,8 +31,8 @@ function populate(filter) {
     let item = document.createElement('li');
     item.innerHTML = `
         <li class="taskContainer">
-          <label for="demo-task" class="task">
-            <input type="checkbox" name="demo-task" id="t-${i}" class="check" ${displayTasks[i].finished ? "checked" : ""}>
+          <label for="task${i}" class="task">
+            <input type="checkbox" name="task${i}" id="t-${i}" class="check" ${displayTasks[i].finished ? "checked" : ""}>
             <span class="checkbox">X</span>
             <p class="taskText">${displayTasks[i].body}</p>
           </label>
@@ -49,18 +45,17 @@ function populate(filter) {
 }
 
 const getTasks = () => {
-  return myTasks;
+  return localStorage.getItem("myTasks") !== null ? localStorage.getItem("myTasks") : JSON.stringify(demoTasks);
 }
 
 const filterList = (filter) => {
-  console.log(filter);
-  displayTasks = myTasks;
+  displayTasks = JSON.parse(getTasks());
   if (filter === "active") {
-    displayTasks = myTasks.filter(x => {
+    displayTasks = JSON.parse(getTasks()).filter(x => {
       return x.finished === false;
     });
   } else if (filter === "completed") {
-    displayTasks = myTasks.filter(x => {
+    displayTasks = JSON.parse(getTasks()).filter(x => {
       return x.finished;
     });
   }
@@ -81,6 +76,7 @@ const setEvents = () => {
       let i = e.target.id.replace('t-', "");
       myTasks[i].finished = !myTasks[i].finished;
       setCounter();
+      localStorage.setItem("myTasks", JSON.stringify(myTasks));
       populate(currentFilter);
     });
   });
@@ -89,31 +85,26 @@ const setEvents = () => {
 const addTask = () => {
   let taskInput = document.getElementById('addTask');
   let body = taskInput.value;
-  console.log(myTasks.length);
   let id = myTasks.length;
   let newTask = new Task(body, false, id);
-  console.log(newTask);
-  console.log(myTasks);
   myTasks.push(newTask);
-  console.log(myTasks.length);
+  localStorage.setItem("myTasks", JSON.stringify(myTasks));
   populate(currentFilter);
   taskInput.value = "";
   setCounter()
 }
 
 const removeTask = (i) => {
-  console.log(myTasks.length);
   myTasks = myTasks.filter(x => {
-    console.log(x.id, " ", i);
     return x.id !== i
   })
-  console.log(myTasks.length);
+  localStorage.setItem("myTasks", JSON.stringify(myTasks));
   populate(currentFilter);
   setCounter();
 };
 
 
-myTasks = getTasks();
-console.log(myTasks);
+localStorage.setItem("myTasks", getTasks());
+let myTasks = JSON.parse(getTasks());
 populate();
 setCounter();
