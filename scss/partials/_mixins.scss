@@ -1,0 +1,12 @@
+// Media Queries
+@mixin MQ($break) {
+  @if $break == S {
+   @media screen and (max-width: $S) { @content; }
+  }
+  @else if $break == M {
+   @media screen and (min-width: $M) { @content; }
+  }
+  @else if $break == L {
+   @media screen and (min-width: $L) { @content; }
+  }
+}
