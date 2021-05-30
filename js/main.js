@@ -20,6 +20,10 @@ const links = [{
     label: "Week 05 Notes",
     url: "views/w05.html"
   },
+  {
+    label: "To Do App",
+    url: "views/todo.html"
+  }
 ]
 
 function createToc() {
@@ -59,6 +63,6 @@ function createNav() {
   });
 }
 
-const start = () =>{
+const start = () => {
   createNav()
 }

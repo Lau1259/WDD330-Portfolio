@@ -91,7 +91,7 @@ const addTask = () => {
   localStorage.setItem("myTasks", JSON.stringify(myTasks));
   populate(currentFilter);
   taskInput.value = "";
-  setCounter()
+  setCounter();
 }
 
 const removeTask = (i) => {
