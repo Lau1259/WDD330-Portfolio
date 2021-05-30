@@ -22,7 +22,7 @@ const links = [{
   },
   {
     label: "To Do App",
-    url: "views/todo.html"
+    url: "views/toDo.html"
   }
 ]
 
