@@ -1,2 +1,179 @@
-html,body{margin:0;padding:0}header{display:grid;grid-template-columns:auto repeat(3, 1fr);align-items:center;padding:1em 1.5em;background-color:#b42d2d}header h1{grid-column:3/5}nav ul{display:flex;margin:0;padding:0}nav li{list-style-type:none}nav a{display:block;padding:0.5em;color:rgba(255,255,255,0.8)}h1,h2,h3,h4,h5,h6{margin:0}h1{color:#fff;font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif}main{padding:1em 1.5em;background-color:#1f1f1f;min-height:100vh;color:#f2f2f2;font-size:18pt}#toc{margin:1em 0;padding:0;list-style-type:none}a{padding:0.5em 1em;text-decoration:none}.nav-link{display:block;border-radius:1.5em;color:#f2f2f2;font-size:1.5em;font-family:Cambria, Cochin, Georgia, Times, "Times New Roman", serif;background-color:#0f0f0f;transition:0.35s;border-radius:1.5em;margin-bottom:0.5em}.nav-link:hover{background-color:#f2f2f2;color:#383838}.codeblock{display:block;font-size:0.75em;background-color:rgba(180,45,45,0.35);overflow-x:scroll;max-width:80%;padding:1em;margin:1em auto}.highlight{color:#b42d2d;background-color:rgba(0,0,0,0.5);font-size:1.2em;padding:0em 0.5em;margin:0em 0.25em}.doggo{display:grid;grid-template-columns:repeat(3, 1fr);align-items:center;background-color:#ffffff;border-radius:2em;margin:2em auto;padding:3em 2em;color:black;max-width:60vw;grid-gap:1em}.doggo img{width:20vw;height:auto;border-radius:2em}.doggo .dogInfo{grid-column:2/-1;background-color:burlywood;border-radius:1em;display:grid;padding:0 2em}.dog-choice{display:flex;justify-content:space-evenly;margin:2em 0em}.dog-choice button{font-size:1.25em;background-color:burlywood;border-radius:1em;padding:1em}.notes{font-size:1.35em;font-weight:600;background:#e0c8a9;font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;padding:2em 1em;color:#383864}form{padding:2em;margin:0 auto;font-size:1.25em;max-width:80vw}form input{display:block;width:100%;padding:1em}form input[type="submit"]{font-size:1.25em;background-color:burlywood;border-radius:0.25em;padding:0.25em;margin:0.5em}.success{background:#a6dd73;text-align:center;border-radius:0.5em;padding:1.2em}pre{overflow-x:scroll}#main-nav{display:block}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr);
+  align-items: center;
+  padding: 1em 1.5em;
+  background-color: #b42d2d;
+}
+header h1 {
+  grid-column: 3/5;
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  list-style-type: none;
+}
+nav a {
+  display: block;
+  padding: 0.5em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  padding: 1em 1.5em;
+  background-color: #1f1f1f;
+  min-height: 100vh;
+  color: #f2f2f2;
+  font-size: 18pt;
+}
+
+#toc {
+  margin: 1em 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.nav-link {
+  display: block;
+  border-radius: 1.5em;
+  color: #f2f2f2;
+  font-size: 1.5em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #0f0f0f;
+  transition: 0.35s;
+  border-radius: 1.5em;
+  margin-bottom: 0.5em;
+}
+.nav-link:hover {
+  background-color: #f2f2f2;
+  color: #383838;
+}
+
+.codeblock {
+  display: block;
+  font-size: 0.75em;
+  background-color: rgba(180, 45, 45, 0.35);
+  overflow-x: scroll;
+  max-width: 80%;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.highlight {
+  color: #b42d2d;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 1.2em;
+  padding: 0em 0.5em;
+  margin: 0em 0.25em;
+}
+
+.doggo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 2em;
+  margin: 2em auto;
+  padding: 3em 2em;
+  color: black;
+  max-width: 60vw;
+  grid-gap: 1em;
+}
+.doggo img {
+  width: 20vw;
+  height: auto;
+  border-radius: 2em;
+}
+.doggo .dogInfo {
+  grid-column: 2/-1;
+  background-color: burlywood;
+  border-radius: 1em;
+  display: grid;
+  padding: 0 2em;
+}
+
+.dog-choice {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2em 0em;
+}
+.dog-choice button {
+  font-size: 1.25em;
+  background-color: burlywood;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.notes {
+  font-size: 1.35em;
+  font-weight: 600;
+  background: #e0c8a9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2em 1em;
+  color: #383864;
+}
+
+form {
+  padding: 2em;
+  margin: 0 auto;
+  font-size: 1.25em;
+  max-width: 80vw;
+}
+form input {
+  display: block;
+  width: 100%;
+  padding: 1em;
+}
+form input[type=submit] {
+  font-size: 1.25em;
+  background-color: burlywood;
+  border-radius: 0.25em;
+  padding: 0.25em;
+  margin: 0.5em;
+}
+
+.success {
+  background: #a6dd73;
+  text-align: center;
+  border-radius: 0.5em;
+  padding: 1.2em;
+}
+
+pre {
+  overflow-x: scroll;
+}
+
+#main-nav {
+  display: block;
+}
+
 /*# sourceMappingURL=main.css.map */

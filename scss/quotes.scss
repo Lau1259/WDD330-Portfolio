@@ -1,0 +1,123 @@
+@import "partials/variables";
+@import "partials/mixins";
+
+.quote-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 1em;
+  align-items: center;
+  justify-content: center;
+  background: $accent1-100;
+  color: white;
+  border-radius: 2em;
+  padding: 1.25em 2em;
+  transition: background 0.63s;
+  &:hover,
+  &:focus-within {
+    background: $dark-300;
+    .action {
+      &:hover,
+      &:focus {
+        background-color: $light-100;
+      }
+      transition: 0.55s;
+    }
+    .tag {
+      background-color: $light-300;
+    }
+    .flare {
+      color: $accent1-100;
+    }
+  }
+
+  .quote {
+    grid-column: 1/9;
+  }
+  .content {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0;
+    padding: 0.25em;
+    @include MQ(S){
+      font-size: 1rem;
+    }
+    .author {
+      display: block;
+      padding: 0;
+      padding-top: 0.5em;
+      font-size: 0.65em;
+      font-style: italic;
+    }
+  }
+  .info {
+   grid-column: 1/9;
+   display: flex;
+   justify-content: center;
+  }
+  .tag {
+    display: flex;
+    border-radius: 0.55em;
+    background-color: $dark-300;
+    color: $light-200;
+    padding: 0.75em;
+    transition: transform 0.5s;
+    font-size: 0.75em;
+    line-height: 1em;
+    margin: 0.5em;
+    @include MQ(S){
+      font-size: 1rem;
+    }
+    &:hover,
+    &:focus-within {
+      background-color: $accent1-200;
+      color: $light-200;
+      transform: scale(1.15);
+    }
+  }
+}
+
+.action {
+  grid-column: 1/9;
+  font-size: 1em;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  border: none;
+  border-radius: 0.5em;
+  color: $light-300;
+  padding: 0.75em;
+  cursor: pointer;
+  @include MQ(S){
+    font-size: 1rem;
+  }
+}
+
+.flare {
+  font-size: 1.8em;
+  color: $dark-300;
+  position: relative;
+  top: 0.3em;
+  @include MQ(S){
+    font-size: 1.5em;
+  }
+}
+.source {
+  color: #000;
+  background-color: $light-100;
+  transition: 0.35s;
+  &:hover{
+    background-color: $accent1-100;
+    color: $light-100;
+    text-decoration: underline;
+  }
+}
+
+main{
+  line-height: 2em;
+}
+
+
+.container{
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}

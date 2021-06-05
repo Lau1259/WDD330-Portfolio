@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 5 Notes</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/quotes.css">
+</head>
+
+<body onload="start()">
+  <header>
+    <nav id="main-nav"></nav>
+    <h1>AJAX and Functions</h1>
+  </header>
+  <main>
+    <p>AJAX is a tool that allows you to request things from the server through the client. This is a good way to get
+      new data on a webpage and is currently done using the Fetch api.</p>
+    <p>Below I have set up a brief demonstration that uses AJAX to fetch data from the quotable api created by GitHub
+      user <a class="source" href="https://github.com/lukePeavey/quotable"
+        title="Quotable api by LukePeavy">LukePeavy</a>. The api returns a JSON object that represents a quote and
+      includes data such as the content, author name, id of the quote, among other things.</p>
+    <p>A benefit to this is that we can use a promise to have our page load and simply wait until we have the data that
+      were supposed to get from some source.</p>
+    <section id="quote-container" class="quote-container">
+      <div class="quote">
+        <p class="content">Nothing to show yet =(</p>
+      </div>
+      <input type="button" class="action" value="Get Inspired" onclick="getQuote()">
+    </section>
+    <section class="functions-demo">
+      <h2>Functions (Expanded)</h2>
+      <p>Functions in javascript can do more than just run and call other functions in your document. In fact a function
+        can call itself, define itself, or even redefine itself.</p>
+      <p>I have decided to include a greet function to display how this works. Let's start by looking at our base function:</p>
+        <p class="codeblock">function greet() {<br>
+          let name = prompt('Please enter your name below:');<br>
+          }</p>
+          <p>This function serves to ask a user for data and possibly store it for later use. This is a great way to collect data, but after you have it the function becomes worthless. This is where we can take advantage of JavaScripts dynamic nature and redefine the function after running it the first time. The syntax is pretty simple. All you need to do is assign an anonymous function to a variable that has the same name as the original greeting function. Here are the changes I've made:</p>
+          <p class="codeblock">function greeting() {<br>
+            let name = prompt('Please enter your name below:');<br>
+            greeting = function () {<br>
+              let message = document.querySelector('#message');<br>
+              message.innerHTML = `< p>Welcome ${name}! <br> Since we've already met I won't ask you for your name again.< /p>`;<br>
+              message.scrollIntoView();<br>
+            }<br>
+          }</p>
+          <p>Now we will see that the greeting function only asks for you name once and then reassigns itself to display your name in an HTML paragraph.</p>
+
+          <div class="container">
+            <input type="button" value="Try Greeting" class="action" id="runGreeting" onclick="greeting()">
+            <p id="message"></p>
+          </div>
+    </section>
+
+  </main>
+  <script src="../js/main.js"></script>
+  <script src="../js/ajax-demo.js"></script>
+</body>
+
+</html>

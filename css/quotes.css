@@ -1,0 +1,126 @@
+.quote-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: 1em;
+  align-items: center;
+  justify-content: center;
+  background: #b42d2d;
+  color: white;
+  border-radius: 2em;
+  padding: 1.25em 2em;
+  transition: background 0.63s;
+}
+.quote-container:hover, .quote-container:focus-within {
+  background: #0f0f0f;
+}
+.quote-container:hover .action, .quote-container:focus-within .action {
+  transition: 0.55s;
+}
+.quote-container:hover .action:hover, .quote-container:hover .action:focus, .quote-container:focus-within .action:hover, .quote-container:focus-within .action:focus {
+  background-color: #f2f2f2;
+}
+.quote-container:hover .tag, .quote-container:focus-within .tag {
+  background-color: #8c8c8c;
+}
+.quote-container:hover .flare, .quote-container:focus-within .flare {
+  color: #b42d2d;
+}
+.quote-container .quote {
+  grid-column: 1/9;
+}
+.quote-container .content {
+  font-size: 2.5em;
+  text-align: center;
+  margin: 0;
+  padding: 0.25em;
+}
+@media screen and (max-width: 32em) {
+  .quote-container .content {
+    font-size: 1rem;
+  }
+}
+.quote-container .content .author {
+  display: block;
+  padding: 0;
+  padding-top: 0.5em;
+  font-size: 0.65em;
+  font-style: italic;
+}
+.quote-container .info {
+  grid-column: 1/9;
+  display: flex;
+  justify-content: center;
+}
+.quote-container .tag {
+  display: flex;
+  border-radius: 0.55em;
+  background-color: #0f0f0f;
+  color: #bfbfbf;
+  padding: 0.75em;
+  transition: transform 0.5s;
+  font-size: 0.75em;
+  line-height: 1em;
+  margin: 0.5em;
+}
+@media screen and (max-width: 32em) {
+  .quote-container .tag {
+    font-size: 1rem;
+  }
+}
+.quote-container .tag:hover, .quote-container .tag:focus-within {
+  background-color: #8b2323;
+  color: #bfbfbf;
+  transform: scale(1.15);
+}
+
+.action {
+  grid-column: 1/9;
+  font-size: 1em;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 0.5em;
+  color: #8c8c8c;
+  padding: 0.75em;
+  cursor: pointer;
+}
+@media screen and (max-width: 32em) {
+  .action {
+    font-size: 1rem;
+  }
+}
+
+.flare {
+  font-size: 1.8em;
+  color: #0f0f0f;
+  position: relative;
+  top: 0.3em;
+}
+@media screen and (max-width: 32em) {
+  .flare {
+    font-size: 1.5em;
+  }
+}
+
+.source {
+  color: #000;
+  background-color: #f2f2f2;
+  transition: 0.35s;
+}
+.source:hover {
+  background-color: #b42d2d;
+  color: #f2f2f2;
+  text-decoration: underline;
+}
+
+main {
+  line-height: 2em;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=quotes.css.map */

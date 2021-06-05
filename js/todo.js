@@ -72,7 +72,7 @@ const setEvents = () => {
   let checkboxes = document.querySelectorAll(".check");
   checkboxes.forEach((x) => {
     x.addEventListener('click', (e) => {
-      myTasks = getTasks();
+      myTasks = JSON.parse(getTasks());
       let i = e.target.id.replace('t-', "");
       myTasks[i].finished = !myTasks[i].finished;
       setCounter();
