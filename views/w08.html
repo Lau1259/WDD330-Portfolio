@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 8s</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/w08.css">
+</head>
+
+<body onload="start()">
+  <header>
+    <nav id="main-nav"></nav>
+    <h1>Week 8 Notes</h1>
+  </header>
+  <main>
+    <section>
+      <h2 class="title">CSS Transforms & Transitions</h2>
+      <p>CSS transforms and transitions are one way of achieving basic animations with CSS. Transforms can be used to
+        move items, change their color, or even change their scale.</p>
+      <p>I'll exemplify this with the card below</p>
+      <div class="card">
+        <h2 class="label">Chihuahua</h2>
+        <div class="card-info">
+          <p class="desc">A small dog with a big attitude.</p>
+          <p class="price">$495.99</p>
+        </div>
+      </div>
+      <p>The card above uses CSS transform and transition properties to trigger the simple animation above. The
+        transform is used to scale the label that says Chihuahua and the transition property is used to make the label
+        animation last .35s</p>
+      <p>Additionally, the above animation uses the transition-delay property on the background color for the text. I
+        wanted the animation to trigger after the label scales so I used a delay to make sure it is triggered at the
+        right moment.</p>
+    </section>
+    <section>
+      <h2 class="title">Canvas, SVG, and Drag and Drop</h2>
+      <div class="sect-item">
+        <h3>Canvas</h3>
+        <p>Canvas is a way to draw using JavaScript. It can be used for games that need to update the visuals often.
+          Canvas has some benefits like being able to save a canvas to a png or jpg. It can also take an image and
+          process the data to edit colors. Below is a basic canvas with some colored shapes drawn on it.</p>
+        <canvas id="c1" class="canvas" width="300px" height="500">Sorry! Your browser doesn't support canvas =(</canvas>
+        <button class="btn" onclick="clearCanvas()">Reset Canvas</button>
+      </div>
+      <div class="sect-item">
+        <h3>SVG</h3>
+        <p>SVG is a way to display digital graphics on the web. It allows you to create basic shapes such as a rectangle
+          and a circle. It also allows the user to draw a path; This is most often done using special software such as
+          Adobe Illustrator or Inkscape.</p>
+        <p>Below are simple examples of SVG shapes and how you can use CSS (active and hover states) to change and animate them.</p>
+        <p>CLick on the rectangle to activate</p>
+        <svg class="square1">
+          <rect width="300px" height="300px" />
+        </svg>
+        <p>Hover over the circle to activate</p>
+        <div class="circle-container">
+          <svg class="circle1">
+            <circle cx="50" cy="50" r="25" fill="red" />
+          </svg>
+        </div>
+      </div>
+      <div class="sect-item">
+
+    </section>
+  </main>
+  <script src="../js/main.js"></script>
+  <script src="../js/w08.js"></script>
+</body>
+
+</html>

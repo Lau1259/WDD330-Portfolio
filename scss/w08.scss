@@ -1,0 +1,113 @@
+@import "partials/variables";
+.card {
+  width: 80vw;
+  height: 60vh;
+  max-width: 450px;
+  max-height: 600px;
+  background: url("../images/dogs/chihuahua.jpg") center;
+  background-size: cover;
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  margin: 1em;
+  .label {
+    position: relative;
+    top: calc(100% - 1.65em);
+    text-align: center;
+    background-color: rgba($color: rgb(117, 74, 49), $alpha: 0.45);
+    padding: 0.25em;
+    transition: 0.35s;
+    transition: scale 0.5s 0.85s;
+  }
+  &:hover {
+    .label {
+      background-color: rgb(172, 80, 37);
+      transform: scale(1.1, 1.05);
+      transition: 0.45s;
+      + .card-info {
+        visibility: visible;
+        background-color: rgba($color: rgb(24, 24, 24), $alpha: 0.8);
+        margin-top: -2.5em;
+        border-top-left-radius: 1.5em;
+        border-top-right-radius: 1.5em;
+      }
+    }
+  }
+  .card-info {
+    visibility: hidden;
+    display: grid;
+    height: 100%;
+    text-align: center;
+    transition: 0.85s 0.3s ease-out;
+  }
+}
+
+section {
+  display: grid;
+  justify-items: center;
+  .title {
+    margin: 1em;
+    text-decoration: underline $accent1-100 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .sect-item {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+.canvas {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid $light-100;
+}
+
+.btn {
+  width: 100%;
+  font-size: 1em;
+  background-color: $light-200;
+  margin: 0.75em;
+  transition: 0.2s;
+  &:hover {
+    background-color: $dark-100;
+    color: $accent1-100;
+  }
+}
+
+.square1 rect {
+  fill: $accent1-200;
+  transition: 0.35s;
+  &:active {
+    transform: rotate(100deg);
+    fill: rgb(161, 23, 161);
+  }
+}
+
+.circle-container:hover .circle1 circle {
+    animation: rainbow 3s infinite ease;
+}
+@keyframes rainbow {
+  0%{
+    fill: red;
+    transform: scale(1.35);
+  }
+  20%{
+    fill: rgb(13, 121, 13);
+    transform: scale(0.5);
+  }
+  40%{
+    fill: rgb(255, 217, 0);
+    transform: scale(1.05);
+  }
+  60%{
+    fill: rgb(182, 84, 28);
+    transform: scale(0.35);
+  }
+  80%{
+    fill: rgb(184, 49, 8);
+    transform: scale(1.5);
+  }
+  100%{
+    fill: rgba(105, 29, 6, 0.418);
+    transform: scale(1.35);
+  }
+}
