@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 9 Notes</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/w08.css">
+</head>
+
+<body onload="start()">
+  <header>
+    <nav id="main-nav"></nav>
+    <h1>Week 9 Notes</h1>
+  </header>
+  <main>
+    <section>
+      <h1>The window Object</h1>
+      <p>In short the window object is the global object in a browser. What does this mean? It means that it holds a lot
+        of information and anything created in the global scope belongs to this object.</p>
+      <h2>What information can you get?</h2>
+      <ul>
+        <li>User agent: This is a reference to the user agent which can tell you which browser you are running on and on
+          which operating system. It is important to note that this is deprecated, but still supported in all major
+          browsers.</li>
+        <li>URL Information: The URL information is stored in the window.location object. This object has properties
+          such as href, protocol, and host. They all provide more information about the URL. An interesting property is
+          the search property that will give you a string with any parameters from the URL.</li>
+        <li>Browser History: You can get the browser history getting the window.history property. Information here
+          includes the amount of pages visited before arriving at the current page. You can also use the go method to go
+          to a specific page in your history.</li>
+        <li>Screen Information: The window.screen object has information about the screen the browser is displayed on.
+          It can be used to find the height and width of the screen in pixels. You can also use the availWidth and
+          availHeight properties to know what space is left on the screen after accounting for system menus.</li>
+        <li>The document object: This is an object that has the properties and methods that deal with the current page.
+          The write method in this object allows a user to write to a page or replace the document if it has already
+          been loaded. </li>
+      </ul>
+      <h2>Browser Info. Example:</h2>
+      <ul id="browserInfo"> </ul>
+    </section>
+    <section>
+      <h2>JS Workers</h2>
+      <h3>What are workers?</h3>
+      <p>Workers are a way to handle multi-threading in JavaScript. They allow a program to perform complex operations
+        without interrupting the main application.</p>
+      <h2>Example</h2>
+      <h3>Calculate Fibonnaci</h3>
+      <form>
+        <label for="fnum">Type in a number:
+          <input type="number" name="fnum">
+        </label>
+        <div class="check">
+          <label class="check" for="memoization">Use Memoization: </label>
+          <input type="checkbox" name="memoization">
+        </div>
+        <input type="submit" value="Get Number!">
+      </form>
+      <div id="fOutput"></div>
+      <p>While it may seem that the result is calculated instantly, this is because I am using memoization to speed up
+        the process. If I didn't use memoization the process would take much longer. That being said, the worker allows
+        us to run the page smoothly without having to worry about how long it takes to calculate a portion of the
+        fibonacci sequence. This is especially helpful because I am running a recursive function.
+      </p>
+    </section>
+    <section>
+      <h2>Web Workflow: Node JS</h2>
+      <h3>Useful Modules</h3>
+      <ul>
+        <li>Nodemon: Nodemon is a good way to run your code. It restarts a server whenever you make changes and can
+          sometimes offer better error messages.</li>
+        <li>Express JS: This is part of both the MERN and MEAN stacks. This module allows you to create a server and
+          listen on specific ports. It can also be used to enable routing on a server.</li>
+        <li>EJS: EJS is a templating engine and serves to mix HTML and JS together. It allows you to pass in data from
+          an express route to the EJS file. That JavaScript data may then be used in the template to create dynamic HTML
+          based on the values passed in by the JavaScript.</li>
+        <li>Node JS Core Modules: These modules include the path, fs, http, and more. These tools each serve a different
+          purpose, but make it easier to work with Node JS and can help with things such as reading and writing files,
+          getting the directory path, and making http request.</li>
+        <li>SASS: This is a CSS preprocessor and I can use it to write SASS or SCSS that will later be convert to CSS.
+          THis allows for nesting and other programing logic like variables and for loops in CSS.</li>
+      </ul>
+    </section>
+
+  </main>
+  <script src="../js/main.js"></script>
+  <script src="../js/w09.js"></script>
+</body>
+
+</html>
