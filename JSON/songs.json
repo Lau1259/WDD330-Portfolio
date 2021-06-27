@@ -1,0 +1,25 @@
+[{
+    "title": "Time",
+    "artist": ["NF"],
+    "rating": 5,
+    "tags": ["Rap","Friendship"]
+  },
+  {
+    "title": "There For You",
+    "artist": ["martin Garrix", "Troye Sivan"],
+    "rating": 5,
+    "tags": ["Pop", "Friendship"]
+  },
+  {
+    "title": "Stuck With U",
+    "artist": ["Ariana Grande", "Justin Beiber"],
+    "rating": 5,
+    "tags": ["Love", "Friendship", "Pop"]
+  },
+  {
+    "title": "Saturday Nights (Remix)",
+    "artist": ["Khalid", "Kane Brown"],
+    "rating": 4.5,
+    "tags": ["Pop", "Chill", "Country"]
+  }
+]

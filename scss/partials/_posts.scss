@@ -1,0 +1,12 @@
+$post-bg: rgb(210, 133, 233);
+.post[data-status="hidden"]{
+  display: none;
+}
+.post {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  background: $post-bg;
+  border-radius: 1.25em;
+  padding: 2em;
+}

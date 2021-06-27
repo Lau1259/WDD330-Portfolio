@@ -182,3 +182,18 @@ section{
   display: flex;
   align-items: center;
 }
+
+.inputs{
+  background-color: $accent1-300;
+  padding: 1em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  input{
+    width: 100%;
+  }
+  button{
+    margin-top: 1em;
+  }
+}

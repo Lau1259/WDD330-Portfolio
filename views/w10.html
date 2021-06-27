@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 10 Notes</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/w10.css">
+
+</head>
+
+<body onload="start()">
+  <header>
+    <nav id="main-nav"></nav>
+    <h1>Week 10 Notes</h1>
+  </header>
+  <main>
+    <section>
+      <h1>Form Validation</h1>
+      <p>Form validation refers to making sure that some input meets certain requirements.This can be done both on the
+        client side and the server side. </p>
+
+      <p>Use cases of validation include using regex patterns to make sure things are written in a specific format, such
+        as all emails having to use '@' in between the username and the domain name. It can also be used to check if
+        numbers fall in between a certain range by using min and max and also set a minimum length for a text input.
+      </p>
+
+      <p>You can use HTML attributes to control validation or use the constraint validation API. Validation offered
+        through HTML attributes is not considered safe since they can be disabled easily.</p>
+      <h2>Common HTML validation:</h2>
+      <ul>
+        <li>Require: force an input to contain data before being able to submit.</li>
+        <li>min: set the minimum value for a number input</li>
+        <li>max: set the maximum value for a number input</li>
+        <li>Pattern: check if a text input matches a certain regex pattern structure.</li>
+      </ul>
+
+      <p>In the example below we will see how the constraint validation API checks for custom validation. We will start
+        by disabling validation using the novalidate attribute in the HTML</p>
+      <form id="customForm" novalidate>
+        <label for="telNum">Phone Number:
+          <p>The phone number must be at least 10 characters long, be formatted correctly, and cannot be empty. The input will turn green upon success.</p>
+          <input type="tel" name="telNum" id="telNum" placeholder="For example: (123) 456-7890" required minlength="10"
+            pattern="^\(?([0-9]{3})\)?[-.\s,●]?([0-9]{3})[-.●]?([0-9]{4})$">
+          <span class="error" aria-live="polite"></span>
+        </label>
+      </form>
+    </section>
+    <section>
+      <h1>Fetch and APIs</h1>
+      <p>Fetch allows you to fetch resources asynchronously. THis is very useful to get data from an external source
+        (for example a REST API) and then use that data in the view to dynamically change a website through the client
+        side.</p>
+      <p>For this example, we will be using the <a href="http://jsonplaceholder.typicode.com" target="_blank"
+          title="JSON Placeholder Website" class="link">{JSON} Placeholder Fake API</a> that allows you to use several
+        requests to work with example JSON data. We will be working with the posts route that will return dummy data
+        including a title, body, and userId.</p>
+      <h2>Fetch Overview</h2>
+      <p>Fetch can take two arguuments. The first is the URL or source to use for the request. The second is an optional
+        object that holds option such as what method to use, headers, cache settings, and mode.</p>
+      <div class="codeblock">
+        fetch(URL, {OPTIONS})<br>
+        .then(response => response.json())<br>
+        .then(data => console.log(data));
+      </div>
+      <p>It is important to note that fetch is asynchronous so it returns a promise that we can extract data from by
+        using the then method. The response is an http(s) response so we need to use 2 to get the JSON data from our
+        api.</p>
+    </section>
+    <section>
+      <h1 class="title">Examples</h1>
+      <article>
+        <p class="subtitle">Fetch with a GET request</p>
+        <p>Fetch will default to a get request so you only need to pass in the source from which it needs to request
+          data.
+        </p>
+        <input type="number" name="" id="postNum" value="1">
+        <button onclick="getPost()">Fetch Posts</button>
+        <div id="getPostContainer" class="post" data-status="hidden"></div>
+      </article>
+      <article>
+        <p class="subtitle">Fetch with a POST request</p>
+        <p>Fetch can send a POST request if you specify it in the options like this:
+          <div class="codeblock">
+            {<br>
+            method: 'POST',<br>
+            body: JSON.stringify({<br>
+            title: 'foo',<br>
+            body: 'bar',<br>
+            userId: 1,<br>
+            })
+          </div>
+          In this case, the POST request will "create" a new post. In this case the API only echoes the data that was
+          passed in and data is not added to the server. The method in this case would look like this:
+          <div class="codeblock">
+            {<br>
+            method: 'POST',<br>
+            body: JSON.stringify({<br>
+            id: 1,<br>
+            title: 'Updated Post',<br>
+            body: 'This post has been updated',<br>
+            userId: 1,<br>
+            })
+          </div>
+        </p>
+        <div class="inputs">
+          <label for="postTitle">Title:
+            <input type="text" name="postTitle" id="postTitle"></label>
+          <textarea name="postBody" id="postBody" cols="30" rows="10"></textarea>
+          <label for="postUserId">User ID #:
+            <input type="number" name="userId" id="postUserId" min="1" max="10"></label>
+          <button onclick="newPost()">Create Post</button>
+        </div>
+        <div id="newPostContainer" class="post" data-status="hidden"></div>
+      </article>
+      <article>
+        <p class="subtitle">Update using the PUT method</p>
+        <p>Fetch allows you to use the PUT method to update data. This API does not actually update the data, but will
+          return the new data. Below I will use the PUT method to update the first post.</p>
+        <div class="inputs">
+          <label for="updatePostBody">Post Text:</label>
+          <textarea name="updatePostBody" id="updatePostBody" cols="30" rows="10" required
+            minlength="30">This is my updated post. It must include at least 30 chars.</textarea>
+          <button onclick="updatePost()">Update Post #1</button>
+        </div>
+        <div id="updatePostContainer" class="post" data-status="hidden"></div>
+      </article>
+    </section>
+  </main>
+  <script src="../js/main.js"></script>
+  <script src="../js/w10.js"></script>
+</body>
+
+</html>
