@@ -1,0 +1,42 @@
+// Style classes for messages
+
+.toast{
+  display: grid;
+  grid-template-columns: 8fr auto;
+  align-items: center;
+  text-align: left;
+  padding: 0.5em 1em;
+}
+
+.clear-toast{
+  padding: 0.5em;
+  text-align: center;
+  background-color: scale-color($color:$dark, $alpha: 50%);
+  color: $light;
+  cursor: pointer;
+  font-weight: 800;
+  &:hover{
+    background-color: $error;
+
+  }
+}
+
+.info{
+background-color: $info;
+color: $light;
+}
+
+.success{
+background-color: $success;
+color: $dark;
+}
+
+.warning{
+background-color: $warning;
+color: $dark;
+}
+
+.error{
+background-color: $error;
+color: $light;
+}

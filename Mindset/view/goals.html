@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goals | Mindset</title>
+  <link rel="stylesheet" href="../public/css/mindset.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../index.html">
+        <p class="logo-title"><span class="light">MIND</span><span class="accent">SET</span></p>
+        <p class="logo-sub">Regain Control</p>
+      </a>
+    </div>
+
+    <div data-type="toggler" id="nav-toggler" class="toggle-container nav-toggler-container" title="Menu">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <nav id="primaryNav">
+      <ul class="hidden" id="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="inspiration.html">Inspiration</a></li>
+        <li><a href="goals.html" class="active">Goals</a></li>
+        <li><a href="progress.html">Progress</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="toast-container">
+    </div>
+    <section class="goals-section">
+      <h1>Goals:</h1>
+      <div class="goals-container" id="goals-container">
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Created by Lautaro Cuevas 2021</p>
+    <p>You can find his portfolio on <a href="https://lau1259.github.io/WDD330-Portfolio/">GitHub</a></p>
+  </footer>
+  <aside class="modal hidden" id="newGoalModal">
+    <div class="goal-modal">
+      <h2>Add a new Goal:</h2>
+      <label for="addTitle">Title:
+        <input type="text" name="addTitle" id="addTitle" required>
+      </label>
+
+      <label for="addStatus"> Goal Completed:
+        <input type="checkbox" name="addStatus" id="addStatusComplete">
+      </label>
+      <label for="addDesc">Description:
+        <textarea name="addDesc" id="addDesc" cols="30" rows="10"></textarea>
+      </label>
+      <button id="addNewGoalBtn">Add Goal</button>
+      <button data-type="cancelModal" data-id="newGoalModal">Cancel</button>
+    </div>
+  </aside>
+
+  <aside class="modal hidden" id="editGoalModal">
+    <div class="goal-modal">
+      <h2>Edit Goal:</h2>
+      <label for="editTitle">Title:
+        <input type="text" name="editTitle" id="editTitle" required>
+      </label>
+
+      <label for="editStatus"> Goal Completed:
+        <input type="checkbox" name="editStatus" id="editStatusComplete">
+      </label>
+      <label for="editDesc">Description:
+        <textarea name="editDesc" id="editDesc" cols="30" rows="10"></textarea>
+      </label>
+      <input type="hidden" name="editId" id="editId">
+      <button id="editGoalBtn">Update Goal</button>
+      <button data-type="cancelModal" data-id="editGoalModal">Cancel</button>
+    </div>
+  </aside>
+
+  <div class="actions">
+    <button id="clearGoalsBtn">Clear Goals</button>
+    <button id="addGoalBtn">Add a Goal</button>
+  </div>
+
+  <script src="../public/js/base.js" type="module"></script>
+  <script src="../public/js/goals.js" type="module"></script>
+</body>
+
+</html>

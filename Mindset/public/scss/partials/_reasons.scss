@@ -1,0 +1,56 @@
+.reasons-container {
+  background-color: scale-color($color: $light, $alpha: 20%);
+  color: $accent2;
+  padding: 1em 0.5em;
+  margin: 1em 0;
+  border-radius: 1.25em;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  .title {
+    text-align: center;
+    font-size: 1.35em;
+  }
+  ul {
+    overflow-x: hidden;
+  }
+  .reason {
+    text-align: center;
+    background-color: scale-color($color: $accent2, $lightness: -10%);
+    color: $light;
+    box-shadow: 4px 5px 8px $dark;
+    margin-bottom: 0.5em;
+    position: relative;
+    animation: slideIn 2s ease;
+    padding: 0.5em 1em;
+  }
+
+  .reason-alt {
+    @extend .reason;
+    background-color: scale-color($color: $accent1, $lightness: -10%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    left: -100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.new-reason-container {
+  @extend %modal;
+  label {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+  input {
+    padding: 0.5em;
+    font-size: 1.35em;
+  }
+}

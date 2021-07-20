@@ -1,0 +1,64 @@
+@import "partials/variables";
+@import "partials/typography";
+@import "partials/mixins";
+@import "partials/placeholders";
+@import "partials/reset";
+@import "partials/nav";
+@import "partials/toasts";
+@import "partials/goals";
+@import "partials/helpers";
+@import "partials/actions";
+@import "partials/reasons";
+@import "partials/inspiration";
+
+// Basic Theme
+body {
+  background-color: $dark;
+  color: $light;
+}
+
+main {
+  padding: 1em 2em;
+  min-height: 100vh;
+  padding-bottom: 5em;
+}
+
+.intro {
+  display: grid;
+  align-items: center;
+  font-size: 5vw;
+  padding: 1em;
+  text-align: center;
+  min-height: 40vh;
+  margin-bottom: 1em;
+  color: scale-color($color: $dark, $lightness: 30%);
+  background-color: scale-color($color: $dark, $lightness: -40%);
+}
+
+footer{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark;
+  background-color: scale-color($color: $dark, $lightness: -40%);
+  padding-top: 1em;
+  padding-bottom: 4em;
+  text-align: center;
+  p{
+    padding: 0.5em;
+  }
+  a{
+    background-color: $accent1;
+    padding: 0 1ch;
+    margin: 0 1ch;
+    color: $light;
+    transition: 0.35s;
+    border-radius: 0.5em;
+    text-decoration: none;
+    &:hover{
+      background-color: $light;
+      color: $accent1;
+    }
+  }
+}
+

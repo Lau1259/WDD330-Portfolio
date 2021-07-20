@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400&family=Lato:wght@100;300;400;700&family=Palanquin+Dark:wght@400;700&display=swap");
+body {
+  font-family: "Biryani", sans-serif;
+}
+
+.title {
+  font-family: "Palanquin Dark", sans-serif;
+  font-weight: 700;
+}
+
+.accent {
+  color: #d32228;
+}
+
+.accent2 {
+  color: #2243d3;
+}
+
+.light {
+  color: #e6e6e6;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo-container .logo-title {
+  font-size: 2em;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  border-bottom: 0.15em #d32228 solid;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #8d9eec;
+}
+
+.percentage-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  border-radius: 1.25em;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(230, 230, 230, 0.8);
+  padding: 2em;
+  color: #1f1f1f;
+}
+
+.percentage-container {
+  gap: 1em;
+}
+
+.percent-display {
+  display: grid;
+  align-items: center;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1em solid #d32228;
+  border-radius: 100%;
+  padding: 1.25em;
+  height: 100px;
+  width: 100px;
+  transition: border-color 2.5s ease;
+}
+
+.medium {
+  border-color: #f17a2b;
+}
+
+.high {
+  border-color: #f0f052;
+}
+
+.complete {
+  border-color: #6cf052;
+}
+
+.percent-desc {
+  grid-column: 2/9;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/*# sourceMappingURL=data.css.map */

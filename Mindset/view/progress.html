@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiration | Mindset</title>
+  <link rel="stylesheet" href="../public/css/mindset.css">
+  <link rel="stylesheet" href="../public/css/data.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../index.html">
+        <p class="logo-title"><span class="light">MIND</span><span class="accent">SET</span></p>
+        <p class="logo-sub">Regain Control</p>
+      </a>
+    </div>
+
+    <div data-type="toggler" id="nav-toggler" class="toggle-container nav-toggler-container" title="Menu">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <nav id="primaryNav">
+      <ul class="hidden" id="nav-list">
+        <li><a href="../index.html" class="active">Home</a></li>
+        <li><a href="inspiration.html">Inspiration</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="progress.html">Progress</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="percentage">
+      <div class="percentage-container" data-type="percentage-container">
+        <div class="percent-display" data-type="percent-display">
+          0% Complete
+        </div>
+        <p class="percent-desc">You have completed <span data-type="fraction-container">0/0</span> goals.</p>
+      </div>
+    </section>
+    <section class="goals-completed">
+      <h1>Goals Completed:</h1>
+      <div id="goal-stats-container"></div>
+    </section>
+  </main>
+  <footer>
+    <p>Created by Lautaro Cuevas 2021</p>
+    <p>You can find his portfolio on <a href="https://lau1259.github.io/WDD330-Portfolio/">GitHub</a></p>
+  </footer>
+  <script src="../public/js/base.js"></script>
+  <script src="../public/js/data-analysis.js"></script>
+</body>
+
+</html>

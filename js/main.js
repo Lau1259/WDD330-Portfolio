@@ -32,6 +32,18 @@ const links = [{
     label: "Week 08 Notes",
     url: "views/w08.html"
   }
+  ,{
+    label: "Week 09 Notes",
+    url: "views/w09.html"
+  }
+  ,{
+    label: "Week 10 Notes",
+    url: "views/w10.html"
+  }
+  ,{
+    label: "Mindset",
+    url: "Mindset/index.html"
+  }
 ]
 
 function createToc() {

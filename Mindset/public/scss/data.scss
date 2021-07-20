@@ -1,0 +1,40 @@
+@import "partials/variables";
+@import "partials/typography";
+@import "partials/mixins";
+@import "partials/placeholders";
+
+.percentage-container{
+  @extend %card;
+  gap: 1em;
+}
+
+.percent-display{
+  display: grid;
+  align-items: center;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1em solid $accent1;
+  border-radius: 100%;
+  padding: 1.25em;
+  height: 100px;
+  width: 100px;
+  transition: border-color 2.5s ease;
+}
+
+.medium{
+  border-color: rgb(241, 122, 43);
+}
+
+.high{
+  border-color: rgb(240, 240, 82);
+}
+
+.complete{
+  border-color: rgb(108, 240, 82);
+}
+
+.percent-desc{
+grid-column: 2/9;
+text-align: center;
+font-size: 1.2em;
+}

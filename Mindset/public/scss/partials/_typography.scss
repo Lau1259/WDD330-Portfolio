@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400&family=Lato:wght@100;300;400;700&family=Palanquin+Dark:wght@400;700&display=swap");
+
+$body: "Biryani", sans-serif;
+$heading1: "Palanquin Dark", sans-serif;
+$heading2: "Lato", sans-serif;
+
+body {
+  font-family: $body;
+}
+
+.title {
+  font-family: $heading1;
+  font-weight: 700;
+}
+
+%accent-color {
+  color: $accent1;
+}
+
+%accent2-color {
+  color: $accent2;
+}
+
+%light-color {
+  color: $light;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .logo-title {
+    font-size: 2em;
+    font-weight: 700;
+    font-family: $heading2;
+    border-bottom: 0.15em $accent1 solid;
+  }
+}
+
+.light {
+  @extend %light-color;
+}
+
+.accent {
+  @extend %accent-color;
+}
+
+.accent2 {
+  @extend %accent2-color;
+}
+
+.highlight{
+  font-weight: bold;
+  color: scale-color($color: $accent2, $lightness: 50%,);
+}

@@ -1,0 +1,48 @@
+.actions {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  background-color: $accent2;
+  line-height: 1.5em;
+  width: 100%;
+  button {
+    @extend %btn;
+    background: transparent;
+    color: $light;
+    &:hover {
+      background-color: $accent1;
+    }
+  }
+}
+
+.goal-actions {
+  grid-column: 1;
+  grid-row: 2/4;
+  align-self: center;
+  button{
+    width: 100%;
+  }
+}
+
+.pagination-actions {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  button {
+    width: 100%;
+    font-size: 1em;
+  }
+  #paginate-next {
+    grid-column: 2;
+  }
+}
+
+.inspiration-actions {
+  width: 100%;
+  background-color: $accent2;
+}
+
+.cancel-btn{
+  @extend %btn;
+  width: auto;
+}

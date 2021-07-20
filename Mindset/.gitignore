@@ -1,0 +1,5 @@
+# Ignore files that aren't code for the site
+docs/
+
+# Ignore test directory for now
+tests/

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiration | Mindset</title>
+  <link rel="stylesheet" href="../public/css/mindset.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="../index.html">
+        <p class="logo-title"><span class="light">MIND</span><span class="accent">SET</span></p>
+        <p class="logo-sub">Regain Control</p>
+      </a>
+    </div>
+
+    <div data-type="toggler" id="nav-toggler" class="toggle-container nav-toggler-container" title="Menu">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <nav id="primaryNav">
+      <ul class="hidden" id="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="inspiration.html"  class="active">Inspiration</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="progress.html">Progress</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="intro">
+      <h2 class="title">Get Inspired</h2>
+      <p>If you're losing the will to keep up with your goals you might need a little inspiration to keep going.</p>
+    </section>
+    <section>
+      <h2 class="title accent2">Motivational Sources</h2>
+      <p>A large part of staying motivated is surrounding yourself with things that help you keep your eye on the prize.
+        This can be people, songs, sticky notes or anything else that reminds you of why you're trying to change and
+        grow.</p>
+    </section>
+    <section>
+      <h2 class="title accent2">Quotes</h2>
+      One source of help can be motivational quotes. They help you remember your focus and can become your mantra.</p>
+    </section>
+    <section>
+      <h2 class="title accent2">Write your purpose</h2>
+      <p id="reasons-explanation">Another source of help can be a written reminder. <span class="highlight">Why are you
+          doing this? What do you want to accomplish?</span> Sometimes the best way to remember why you need to keep
+        going is to have a list of reasons written
+        down (typed). We'll get you started with the first one.</p>
+      <div class="reasons-container" id="reasons-container">
+        <h3 class="title">I am doing this because...</h3>
+        <div data-type="reason-display">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Created by Lautaro Cuevas 2021</p>
+    <p>You can find his portfolio on <a href="https://lau1259.github.io/WDD330-Portfolio/">GitHub</a></p>
+  </footer>
+  <div class="quotes-container" id="quotes-container"></div>
+<div class="new-reason-container" id="new-reason-container"></div>
+  <div class="actions inspiration-actions">
+    <button data-type="get-quote">Get New Quote</button>
+    <button data-type="add-reason">Add reason</button>
+  </div>
+  <script src="../public/js/base.js"></script>
+  <script src="../public/js/quotes.js" type="module"></script>
+  <script src="../public/js/reasons.js" type="module"></script>
+</body>
+
+</html>

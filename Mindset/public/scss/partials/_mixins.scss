@@ -1,0 +1,10 @@
+// Media Query Mixin
+@mixin MQ($break) {
+  @if ($break == M) {
+    @media screen and (min-width: $M) {
+      @content;
+    }
+  }
+}
+
+// Gradient Mixin
