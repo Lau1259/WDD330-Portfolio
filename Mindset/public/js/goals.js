@@ -295,6 +295,9 @@ const saveGoals = () => {
 };
 
 const loadGoals = () => {
+  if(localStorage.getItem('myGoals') === null){
+    localStorage.myGoals = '[]';
+  }
   myGoals = JSON.parse(localStorage.getItem('myGoals'));
   if (myGoals.length >= 1) {
     if (myGoals[0] instanceof Goal === false) {

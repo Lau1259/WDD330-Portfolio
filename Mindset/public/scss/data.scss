@@ -3,12 +3,12 @@
 @import "partials/mixins";
 @import "partials/placeholders";
 
-.percentage-container{
+.percentage-container {
   @extend %card;
   gap: 1em;
 }
 
-.percent-display{
+.percent-display {
   display: grid;
   align-items: center;
   font-size: 1.5em;
@@ -19,22 +19,29 @@
   height: 100px;
   width: 100px;
   transition: border-color 2.5s ease;
+  grid-column: 1/9;
+  @include MQ(M) {
+    grid-column: 1;
+  }
 }
 
-.medium{
+.medium {
   border-color: rgb(241, 122, 43);
 }
 
-.high{
+.high {
   border-color: rgb(240, 240, 82);
 }
 
-.complete{
+.complete {
   border-color: rgb(108, 240, 82);
 }
 
-.percent-desc{
-grid-column: 2/9;
-text-align: center;
-font-size: 1.2em;
+.percent-desc {
+  grid-column: 1/9;
+  text-align: center;
+  font-size: 1.2em;
+  @include MQ(M) {
+    grid-column: 2/9;
+  }
 }
