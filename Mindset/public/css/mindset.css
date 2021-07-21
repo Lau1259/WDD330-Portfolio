@@ -345,8 +345,10 @@ nav ul a.active {
   display: none;
 }
 
-#primaryNav ul.hidden {
-  display: flex;
+@media screen and (min-width: 52em) {
+  #primaryNav ul.hidden {
+    display: flex;
+  }
 }
 
 .full-width {

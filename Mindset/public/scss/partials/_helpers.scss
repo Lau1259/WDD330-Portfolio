@@ -3,7 +3,9 @@
 }
 
 #primaryNav ul.hidden{
+  @include MQ(M){
   display: flex;
+}
 }
 
 .full-width{
