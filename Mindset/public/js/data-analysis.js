@@ -3,6 +3,9 @@ let completed;
 
 const getPercentage = () => {
   let percent = toPercent(completed.length, myGoals.length);
+  if(isNaN(percent)){
+    percent = 0;
+  }
   let fraction = `${completed.length} out of ${myGoals.length}`;
   let percentDisplay = document.querySelector('[data-type="percent-display"]');
   let fractionDisplay = document.querySelector('[data-type="fraction-container"]');
